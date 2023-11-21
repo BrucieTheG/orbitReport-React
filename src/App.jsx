@@ -4,12 +4,17 @@ import Banner from "./components/Banner"
 import { useState } from "react";
 import satData from "./components/satData"
 
-
+// The useState() hook takes the first (initial) value of the state 
+// variable as its argument. The second value then sets your state,
 function App() {
+  // It can be used like this: const [state, setState] = useState(initialValue); 
+  // Here, the initialValue is the value you want to start with, and state is the 
+  // current state value that can be used in your component. The setState function can 
+  // be used to update the state , triggering a re-render of your component.
   const [sat, setSat] = useState(satData);
   const displaySats = [...new Set(satData.map((data) => data.orbitType))];
 
-  const filterByType = (currentType) => {
+  const filterType = (currentType) => {
     const displaySats = satData.filter((newSatDisplay) => {
       return newSatDisplay.orbitType === currentType;
     });
@@ -20,7 +25,7 @@ function App() {
     <div>
       <Banner />
       <Buttons
-        filterByType={filterByType}
+        filterByType={filterType}
         setSat={setSat}
         displaySats={displaySats}
       />
