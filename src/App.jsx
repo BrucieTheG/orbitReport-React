@@ -1,6 +1,8 @@
 import Buttons from "./components/Buttons";
 import Table from "./components/Table";
 import Banner from "./components/Banner"
+// Hooks are a new addition in React 16.8. 
+// They let you use state and other React features without writing a class.
 import { useState } from "react";
 import satData from "./components/satData"
 
